@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  c-sharp:
+    build: 
+      context: .devcontainer
+      dockerfile: Dockerfile
+      # args: 
+      #   VARIANT: buster
+      #   INSTALL_NODE: true
+      #   NODE_VERSION: lts/*
+    volumes: 
+      - .:/workspace:cached
+      - type: bind
+        source: ${HOME}/.ssh
+        target: /home/vscode/.ssh
+        consistency: cached
+      - type: bind
+        source: ${HOME}/.gnupg
+        target: /home/vscode/.gnupg
+        consistency: cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+  plantuml:
+    # using the jetty server under the belief it is lighter
+    image: "plantuml/plantuml-server:jetty"
+    ports:
+      - "8080:8081"
+

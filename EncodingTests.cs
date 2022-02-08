@@ -5,7 +5,7 @@ using System.Text;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace ByteOrderMarker
+namespace Floatingman.ByteOrderMarker
 {
     public class EncodingTests
     {
