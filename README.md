@@ -29,6 +29,7 @@ UTF-32 | little | FF FE 00 00
 Encoding | Endianness | BOM
 --: | --- | ---
 UTF-7 | n/a | 2B 2F 76
+
 ## How are we going to do this?
 
 There are several items that expose the **BOM**, but first some background, in case you need more information on the **BOM** in general:
@@ -43,7 +44,6 @@ There are several items that expose the **BOM**, but first some background, in c
 Okay, so what **BOM**s does _dotnet_ support and where are they hidden?  Well, as I kinda gave this away already let's just go and have a look at what's in [`System.Text`](https://docs.microsoft.com/en-us/dotnet/api/system.text.encoding).  Right there at the top, _dotnet_ supports five encodings,  we can drill down a bit further and get that expanded to include _big_ and _little_ endian versions.  We get seven encoding out of the box.  
 
 > As a side note, same as last time, we will just be playing in an xUnit project using _fluent assertions_.
-
 
 ## Enough - Show me some code!
 
